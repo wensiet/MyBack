@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-5">
+        {% if user %}
+            <h4>User data: </h4>
+            <p>Username: {{ user.username }}</p>
+            <small id="pas" class="form-text text-muted">Hashed via SHA-256</small>
+            <p>Password: Hidden</p>
+            <p>Admin: {{ user.is_admin }}</p>
+            <p>Registered: {{ user.reg_date.date() }}</p>
+            {% if user.is_admin %}
+                <a href="/show-user/revoke-admin/{{ user.id }}" class="btn btn-danger">Revoke Admin</a>
+            {% else %}
+                <a href="/show-user/grant-admin/{{ user.id }}" class="btn btn-success">Grant Admin</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}

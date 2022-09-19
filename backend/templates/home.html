@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container mt-5">
+        {% for element in news %}
+            <div class="post mt-2">
+                <h3>{{ element.title }}</h3>
+                <small id="pas" class="form-text text-muted">Posted: <strong>{{ element.reg_date.date() }}</strong> by
+                    <strong>{{ element.author }}</strong></small>
+                <p>{{ element.content }}</p>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+    <div class="container mt-5">
+        <h3>MyBack project</h3><br>
+        <div class="authors mt-1">
+            <h5>Authors</h5>
+            <p>
+                Front-end: <a href="https://getbootstrap.com/docs/4.0/examples/">Bootstrap 4.0 examples</a>
+                , redacted by <a href="https://github.com/wensiet">wensiet</a> <br><br>
+                Back-end: <a href="https://github.com/wensiet">wensiet</a><br><br>
+                Block-chain: <a href="#">Nikita</a><br><br>
+            </p>
+        </div>
+        <div class="stack-tech">
+            <h5>Stack of technologies</h5>
+            <p>
+                Front-end: <a href="https://getbootstrap.com">Bootstrap 4.0</a><br><br>
+                Back-end:
+            <ul>
+                <li>
+                    FastAPI
+                    <ul>
+                        <li>Form</li>
+                        <li>WSGIMiddleware</li>
+                        <li>Pydantic</li>
+                    </ul>
+                </li>
+                <li>
+                    Flask
+                    <ul>
+                        <li>Templates</li>
+                        <li>SQLAlchemy</li>
+                        <li>Request</li>
+                    </ul>
+                </li>
+                <li>
+                    Uvicorn
+                </li>
+            </ul>
+            Block-chain: smth <br>
+            </p>
+        </div>
+    </div>
+{% endblock %}

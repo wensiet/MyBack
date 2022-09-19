@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h4>Your profile: </h4>
+        <p>Username: {{ user.username }}</p>
+        <small id="pas" class="form-text text-muted">Hashed via SHA-256</small>
+        <p>Password: {{ user.password }}</p>
+        <p>Admin: {{ user.is_admin }}</p>
+        <p>Registered: {{ user.reg_date.date() }}</p>
+    </div>
+{% endblock %}
